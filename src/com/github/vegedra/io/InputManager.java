@@ -11,20 +11,43 @@ public class InputManager {
     // Construtor
     private InputManager() {}
 
-    // Pausa o programa
-    public static void pause() {
-        System.out.println("\n\nPressione Enter para continuar.");
+    // Ler e executar input - int ou double
+    public static int readInt(String text) {
+        while (true) {
+            System.out.print(text);
 
-        // Limpa qualquer Enter que ficou no buffer
-        if (scanner.hasNextLine()) {
+            if (scanner.hasNextInt()) {
+                int value = scanner.nextInt();
+                scanner.nextLine(); // limpa enter
+                return value;
+            }
+
+            System.out.println("Entrada inválida! Digite um número.");
+            scanner.nextLine(); // descarta lixo
+        }
+    }
+    public static double readDouble(String text) {
+        while (true) {
+            System.out.print(text);
+
+            if (scanner.hasNextDouble()) {
+                double value = scanner.nextDouble();
+                scanner.nextLine();
+                return value;
+            }
+
+            System.out.println("Entrada inválida! Digite um número.");
             scanner.nextLine();
         }
+    }
 
-        // Aguarda o usuario apertar Enter
+    // Pausa o programa
+    public static void pause() {
+        System.out.println("\nPressione Enter para continuar...");
         scanner.nextLine();
     }
 
-    // Encerra o scanner
+    // Fecha o scanner
     public static void close() {
         scanner.close();
     }

@@ -1,0 +1,5 @@
+-- TODO:
+
+- Escolher os lados do dado
+- GUI:
+    \_ fazer uma interface pro Screen e telas próprias para as outras classes (calc, etc)
