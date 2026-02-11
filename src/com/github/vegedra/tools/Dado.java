@@ -13,12 +13,15 @@ public class Dado {
     Random random = new Random();   // Para criar valores aleatorios
     int numDados;
     int faceDados;
-    int total = 0;
+    int total;
 
     // Construtor
     public Dado() {}
 
     public void rolarDados() {
+        // Reseta total
+        total = 0;
+        
         // Input
         System.out.print("\nInsira a face dos dados: ");
         faceDados = InputManager.scanner.nextInt();
@@ -26,9 +29,9 @@ public class Dado {
         System.out.print("\nInsira o número de dados para rolar: ");
         numDados = InputManager.scanner.nextInt();
 
-        if (numDados > 0) {
+        if (faceDados >= 0 || numDados >= 0) {
             for (int i = 0; i < numDados; i++) {
-                // Cria o valor aleatorio de 1 a 8
+                // Cria o valor aleatorio
                 int roll = random.nextInt(1, faceDados);
                 System.out.println("Você rolou: " + roll);
                 total += roll;
