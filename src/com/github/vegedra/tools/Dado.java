@@ -12,21 +12,24 @@ public class Dado {
     // Variaveis
     Random random = new Random();   // Para criar valores aleatorios
     int numDados;
+    int faceDados;
     int total = 0;
 
     // Construtor
     public Dado() {}
 
     public void rolarDados() {
-
         // Input
+        System.out.print("\nInsira a face dos dados: ");
+        faceDados = InputManager.scanner.nextInt();
+        
         System.out.print("\nInsira o número de dados para rolar: ");
         numDados = InputManager.scanner.nextInt();
 
         if (numDados > 0) {
             for (int i = 0; i < numDados; i++) {
-                // Cria o valor aleatorio de 1 a 7
-                int roll = random.nextInt(1, 7);
+                // Cria o valor aleatorio de 1 a 8
+                int roll = random.nextInt(1, faceDados);
                 System.out.println("Você rolou: " + roll);
                 total += roll;
             }
