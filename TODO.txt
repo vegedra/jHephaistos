@@ -1,4 +1,5 @@
 -- TODO:
 
-- GUI (JavaFX):
-    \_ fazer uma interface pro Screen e telas próprias para as outras classes (calc, etc)
+- Converter para Spring
+- GUI
+    \_ fazer uma interface pro Screen e telas próprias para as outras classes (calc, etc) ?
